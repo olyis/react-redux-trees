@@ -1,0 +1,7 @@
+{
+    "content": "Content",
+    "children":
+        [ {"content":"Child 1", "children":[]}
+        , {"content":"Child 2", "children":
+            [ {"content":"Grandchild", "children":[]} ]}]
+}
