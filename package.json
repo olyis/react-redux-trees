@@ -1,7 +1,7 @@
 {
-  "name": "proof",
+  "name": "trees",
   "version": "1.0.0",
-  "description": "Simple interactive presentation for proof objects",
+  "description": "Simple interactive presentation for trees",
   "main": "index.html",
   "scripts": {
     "build": "browserify src/index.jsx -o deploy/bundle.js"
