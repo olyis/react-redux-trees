@@ -4,7 +4,8 @@
   "description": "Simple interactive presentation for trees",
   "main": "index.html",
   "scripts": {
-    "build": "browserify src/index.jsx -o deploy/bundle.js"
+    "build": "browserify src/presentation/tree-index.jsx -o deploy/bundle.js --extension=.json --extension=.js --extension=.jsx",
+    "test": "jasmine"
   },
   "author": "Oliver Sourbut",
   "browserify": {
@@ -19,8 +20,15 @@
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
-    "babelify": "^7.3.0"
+    "babel-register": "^6.23.0",
+    "babelify": "^7.3.0",
+    "enzyme": "^2.7.1",
+    "jasmine": "^2.5.3",
+    "react-addons-test-utils": "^15.4.2",
+    "react-devtools": "^2.0.12"
   }
 }

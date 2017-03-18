@@ -1,0 +1,35 @@
+{
+    "root": 0,
+    "store": [
+        {
+            "id": 0,
+            "content": "Parent",
+            "parent": null
+        },
+        {
+            "id": 1,
+            "content": "Child 1",
+            "parent": 0
+        },
+        {
+            "id": 2,
+            "content": "Grandchild 1",
+            "parent": 1
+        },
+        {
+            "id": 3,
+            "content": "Grandchild 2",
+            "parent": 1
+        },
+        {
+            "id": 5,
+            "content": "Child 2",
+            "parent": 0
+        },
+        {
+            "id": 6,
+            "content": "Great grandchild",
+            "parent": 2
+        }
+    ]
+}
