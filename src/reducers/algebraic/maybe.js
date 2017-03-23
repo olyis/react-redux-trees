@@ -1,4 +1,4 @@
-import sum, {act, match, select} from './sum';
+import sum, {on, match, select} from './sum';
 import unit, {UNIT} from './unit';
 
 const Action = Object.freeze({

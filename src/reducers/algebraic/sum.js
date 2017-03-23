@@ -1,5 +1,5 @@
 const Action = Object.freeze({
-    ACT: 0,
+    ON: 0,
     MATCH: 1,
     SELECT: 2
 })
@@ -8,8 +8,8 @@ function fresh(reducer) {
     return reducer(undefined, {})
 }
 
-export function act(key, action) {
-    return {type: Action.ACT, key, action}
+export function on(key, action) {
+    return {type: Action.ON, key, action}
 }
 
 export function match(matcher) {
@@ -20,12 +20,16 @@ export function select(key, value) {
     return {type: Action.SELECT, key, value}
 }
 
+export function tagged(key, value) {
+    return {key, value}
+}
+
 export function sum(definitionShape, initialKey) {
     const initialValue = fresh(definitionShape[initialKey])
     const initial = {key: initialKey, value: initialValue}
     return function(state = initial, action) {
         switch(action.type) {
-            case Action.ACT:
+            case Action.ON:
                 if (state.key === action.key) {
                     const currentReducer = definitionShape[state.key]
                     const actedValue = currentReducer(state.value, action.action)
@@ -56,4 +60,4 @@ export function sum(definitionShape, initialKey) {
     }
 }
 
-export default {act, match, select, sum}
+export default {on, match, select, sum}

@@ -17,7 +17,7 @@ export function resetAll() {
     return {type: Action.RESET_ALL};
 }
 
-export function act(key, action) {
+export function on(key, action) {
     return {type: Action.ACT, key, action};
 }
 
@@ -44,4 +44,4 @@ export function product(definitionShape) {
     }
 }
 
-export default {reset, resetAll, act, product}
+export default {reset, resetAll, on, product}

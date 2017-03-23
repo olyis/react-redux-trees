@@ -3,7 +3,7 @@ import {tree, Expansion, setContent, setExpansion}
 import {addFresh, add, act, actAll, remove, clear}
     from '../../src/reducers/algebraic/association-list';
 
-describe('the tree reducer', () => {
+describe('the old tree reducer', () => {
     function fresh(reducer) {
         return reducer(undefined, {});
     }

@@ -1,16 +1,16 @@
-import Product, {product} from './product';
-import List, {list} from './list';
+import Product, {product} from './product'
+import List, {list} from './list'
 
 export function onContent(action) {
-    return Product.act('content', action);
+    return Product.on('content', action)
 }
 
 export function onChildren(action) {
-    return Product.act('children', action);
+    return Product.on('children', action)
 }
 
 export function onChild(index, action) {
-    return Product.act('children', List.act(index, action));
+    return Product.on('children', List.on(index, action))
 }
 
 /*
@@ -21,11 +21,11 @@ export function rooted(content) {
     const memo = product({
         content,
         children: list(func)
-    });
+    })
     function func(state, action) {
-        return memo(state, action);
+        return memo(state, action)
     }
-    return func;
+    return func
 }
 
 /*
@@ -34,9 +34,9 @@ export function rooted(content) {
  * s isomorphic to rooted(unit)
  * e.g. [[[], []], [], [], [[[[], [[]]]]]]
  */
-const sMemo = list(s);
+const sMemo = list(s)
 export function s(state, action) {
-    return sMemo(state, action);
+    return sMemo(state, action)
 }
 
 export default {
@@ -45,4 +45,4 @@ export default {
     onContent,
     onChildren,
     onChild
-};
+}
