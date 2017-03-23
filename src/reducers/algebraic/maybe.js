@@ -1,4 +1,4 @@
-import sum, {on, match, select} from './sum';
+import sum, {on, select} from './sum';
 import unit, {UNIT} from './unit';
 
 const Action = Object.freeze({
@@ -28,10 +28,7 @@ export function toSome(value) {
 }
 
 export function map(action) {
-    return match({
-        none: {},
-        some: action
-    })
+    return on('some', action)
 }
 
 export function maybe(reducer) {
