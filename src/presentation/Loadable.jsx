@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {LoadState} from '../data/loader.static'
+import {LoadState} from '../reducers/loadable'
 
 function values(obj) {
     return Object.keys(obj).map(key => obj[key])

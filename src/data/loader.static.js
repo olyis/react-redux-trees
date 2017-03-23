@@ -4,14 +4,6 @@ import Promise from './PromiseMonad';
 const root = data.root;
 const store = data.store;
 
-// TODO refactor
-export const LoadState = Object.freeze({
-    MISSING: -1,
-    NONE: 0,
-    LOADING: 1,
-    LOADED: 2
-})
-
 function getInternal(predicate) {
     return store.filter(val => predicate(val));
 }
@@ -28,4 +20,4 @@ export function getRoot() {
     return new Promise(resolve => resolve(getRootInternal()));
 }
 
-export default {get, getRoot, LoadState}
+export default {get, getRoot}
