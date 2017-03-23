@@ -1,10 +1,7 @@
 import React, {PropTypes} from 'react'
 import {LoadState} from '../data/loader.static'
+import {values} from '../utils/object-utils'
 import Tree from './Tree'
-
-function values(obj) {
-    return Object.keys(obj).map(id => obj[id])
-}
 
 const propTypes = {
     loader: PropTypes.shape({
