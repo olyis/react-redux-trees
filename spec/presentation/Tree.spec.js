@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-import Tree from '../../src/presentation/tree';
-import {LoadState} from '../../src/presentation/Loadable';
+import Tree from '../../src/presentation/tree'
+import {LoadState} from '../../src/reducers/loadable'
 
 describe('the Tree view', () => {
     beforeAll(() => {
         spyOn(console, 'error').and.callFake(err => {
-            throw new Error(err);
-        });
-    });
+            throw new Error(err)
+        })
+    })
 
     function stubTreeStore(data) {
         return {
@@ -28,7 +28,7 @@ describe('the Tree view', () => {
                 id={0}
                 treeStore={treeStore}/>)
             .not.toThrow()
-    });
+    })
 
     it('gives warning when given no id', () => {
         const treeStore = stubTreeStore({})
@@ -36,14 +36,14 @@ describe('the Tree view', () => {
             <Tree
                 treeStore={treeStore}/>)
             .toThrowError(/id/)
-    });
+    })
 
     it('gives warning when given no treeStore', () => {
         expect(() =>
             <Tree
                 id={0}/>)
             .toThrowError(/treeStore/)
-    });
+    })
 
     it('gives warning when treeStore does not have necessary load method', () => {
         const treeStore = stubTreeStore({})
@@ -53,7 +53,7 @@ describe('the Tree view', () => {
                 id={0}
                 treeStore={treeStore}/>)
             .toThrowError(/treeStore/)
-    });
+    })
 
     it('gives warning when treeStore does not have necessary getLoadState method', () => {
         const treeStore = stubTreeStore({})
@@ -63,7 +63,7 @@ describe('the Tree view', () => {
                 id={0}
                 treeStore={treeStore}/>)
             .toThrowError(/treeStore/)
-    });
+    })
 
     it('gives warning when treeStore does not have necessary getContent method', () => {
         const treeStore = stubTreeStore({})
@@ -73,7 +73,7 @@ describe('the Tree view', () => {
                 id={0}
                 treeStore={treeStore}/>)
             .toThrowError(/treeStore/)
-    });
+    })
 
     it('gives warning when treeStore does not have necessary getChildren method', () => {
         const treeStore = stubTreeStore({})
@@ -83,5 +83,5 @@ describe('the Tree view', () => {
                 id={0}
                 treeStore={treeStore}/>)
             .toThrowError(/treeStore/)
-    });
-});
+    })
+})

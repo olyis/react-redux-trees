@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react'
-import {LoadState} from '../data/loader.static'
+import {LoadState} from '../reducers/loadable'
 import {values} from '../utils/object-utils'
 import Tree from './Tree'
 
