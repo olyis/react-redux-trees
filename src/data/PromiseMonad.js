@@ -1,9 +1,9 @@
-function isPromise(candidate) {
+export function isPromise(candidate) {
     // TODO improve
     return candidate && !!candidate.then;
 }
 
-export default function PromiseMonad(action) {
+export function PromiseMonad(action) {
     const self = this;
     let resolved = false;
     let rejected = false;
@@ -91,3 +91,13 @@ export default function PromiseMonad(action) {
                 }))
     }
 }
+
+export function pureReject(reason) {
+    return new PromiseMonad((_, reject) => reject(reason))
+}
+
+export function pure(value) {
+    return new PromiseMonad(resolve => resolve(value))
+}
+
+export default PromiseMonad
